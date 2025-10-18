@@ -14,7 +14,7 @@ public class BezierCalculator {
 
         for (int i = 0; i <= n; i++) {
             // coef = C(n,i) × (1-t)^(n-i) × t^i
-            double coef = binomialCoefficient(n, i) * Math.pow(1 - t, n - i) * Math.pow(t, i);
+            double coef = coefficient(n, i) * Math.pow(1 - t, n - i) * Math.pow(t, i);
             Point p = points.get(i);
             x += coef * p.x;
             y += coef * p.y;
@@ -23,13 +23,14 @@ public class BezierCalculator {
         return new Point((int) x, (int) y);
     }
 
-    private static double binomialCoefficient(int n, int k) {
+    private static double coefficient(int n, int k) {
         if (k < 0 || k > n) {
             return 0;
         }
         if (k == 0 || k == n) {
             return 1;
         }
+        // C(n,k) = n! / (k! × (n-k)!)
         double result = 1;
         for (int i = 1; i <= k; i++) {
             result *= (double) (n - i + 1) / i;
