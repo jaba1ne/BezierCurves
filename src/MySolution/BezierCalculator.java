@@ -10,7 +10,8 @@ public class BezierCalculator {
         if (n < 1)
             return null;
 
-        double x = 0, y = 0;
+        double x = 0;
+        double y = 0;
 
         for (int i = 0; i <= n; i++) {
             // coef = C(n,i) × (1-t)^(n-i) × t^i

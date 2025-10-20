@@ -1,10 +1,10 @@
 package MySolution;
 
+import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import javax.swing.SwingUtilities;
 
 public class Input {
     private final BezierCurvePoints bezierCurvePoints;
@@ -18,7 +18,7 @@ public class Input {
             @Override
             public void mouseClicked(MouseEvent e) {
                 // левая кнопка мыши - добавить точку
-                if (SwingUtilities.isLeftMouseButton(e)) {
+                if (SwingUtilities.isLeftMouseButton(e) || SwingUtilities.isRightMouseButton(e)) {
                     bezierCurvePoints.addPoint(e.getPoint());
                 }
 

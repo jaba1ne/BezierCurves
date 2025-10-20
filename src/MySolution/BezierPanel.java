@@ -53,7 +53,7 @@ public class BezierPanel extends JPanel {
     private void drawControlPointsAndLines(Graphics g) {
         List<Point> points = bezierCurvePoints.getPoints();
 
-        // рисуем линии между контрольными точками
+
         g.setColor(Color.GRAY);
         for (int i = 0; i < points.size() - 1; i++) {
             Point p1 = points.get(i);
@@ -65,11 +65,11 @@ public class BezierPanel extends JPanel {
         for (int i = 0; i < points.size(); i++) {
             Point p = points.get(i);
             if (i == 0)
-                g.setColor(Color.GREEN);      // первая точка - зеленая
+                g.setColor(Color.GREEN);
             else if (i == points.size() - 1)
-                g.setColor(Color.RED);        // последняя точка - красная
+                g.setColor(Color.RED);
             else
-                g.setColor(Color.BLACK);      // остальные - черные
+                g.setColor(Color.BLACK);
 
             g.fillOval(p.x - 5, p.y - 5, 10, 10);
         }
